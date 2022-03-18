@@ -10,6 +10,7 @@ import {
 
 import Home from './components/pages/Home.js';
 import Success from './components/pages/LandingPage.js';
+import AdminSignin from './components/pages/AdminSignin.js'
 
 
 export default function App() {
@@ -19,27 +20,11 @@ export default function App() {
                 <Routes>
                     <Route path={"/"} element={<Home />} />
                     <Route path={"/success"} element={<Success />} />
+                    <Route path={"/admin"} element={<AdminSignin />} />
                 </Routes>
-                <Footer />
+
             </div>
         </BrowserRouter>
     )
 }
 
-const Footer = () => {
-    return (
-        <p className="text-center" style={ FooterStyle }>Designed & coded by Andrew Yao</p>
-    )
-}
-
-const FooterStyle = {
-    background: "#222",
-    fontSize: ".8rem",
-    color: "#fff",
-    position: "absolute",
-    bottom: 0,
-    padding: "1rem",
-    margin: 0,
-    width: "100%",
-    opacity: ".5"
-}

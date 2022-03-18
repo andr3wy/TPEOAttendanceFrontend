@@ -32,6 +32,7 @@ export default function SignIn() {
                     setErrorMessage(-1);
                     console.log("valid!!");
                     console.log(errorMessage)
+                    window.location.href = `/success`;
 
 
                 }
@@ -65,8 +66,6 @@ export default function SignIn() {
                                             {errors.name && errors.name.type === "required" && (
                                                 <span role="alert">Name is required</span>
                                             )}
-                                            {/*<input type="text"  className="input"*/}
-                                            {/*           required onChange={({target}) => setName(target.value)}/>*/}
                                         </div>
                                         <div className="control">
                                             <label className={"label"}>Meeting Type</label>
@@ -90,6 +89,7 @@ export default function SignIn() {
                             </div>
                         </div>
                     </div>
+                    <Footer />
                 </section>
             );
         }
@@ -136,6 +136,30 @@ export default function SignIn() {
 
         <RenderPage error={errorMessage}/>
     );
+}
+
+const Footer = () => {
+    return (
+        <div>
+            {/*<p className="text-center" style={ FooterStyle }>Designed & coded by Andrew Yao</p>*/}
+            <Link to={"/admin"}><label className={"right-label"} style={FooterStyle}>Admin? Click me!</label></Link>
+        </div>
+
+    );
+}
+
+
+
+const FooterStyle = {
+    background: "#222",
+    fontSize: ".8rem",
+    color: "#fff",
+    position: "absolute",
+    bottom: 0,
+    padding: "1rem",
+    margin: 0,
+    width: "100%",
+    opacity: ".5"
 }
 
 
